@@ -1,5 +1,5 @@
 "use client"
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { onAuthStateChanged } from '../firebase/auth';
 import NewsCard from '../components/NewsCard';
 import { NewsContext } from '../context/NewsContext';
@@ -8,7 +8,7 @@ import Loader from '../components/Loader';
 import { useRouter } from 'next/navigation';
 import StoreCard from '../components/StoreCard';
 
-const Page = () => {
+const page = () => {
     const {loader,userNews} = useContext(NewsContext);
     const router = useRouter();
     useEffect(()=>{
@@ -42,4 +42,4 @@ const Page = () => {
   )
 }
 
-export default Page
+export default page
