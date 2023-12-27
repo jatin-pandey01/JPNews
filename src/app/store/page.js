@@ -10,11 +10,11 @@ import StoreCard from '../components/StoreCard';
 
 const page = () => {
     const {loader,userNews} = useContext(NewsContext);
-    const router = useRouter();
+    const Router = useRouter();
     useEffect(()=>{
         onAuthStateChanged(async(user)=>{
             if(!user){
-                router.back();
+                Router.back();
             }
         })
     })

@@ -7,6 +7,7 @@ import { db } from '../firebase/firebase';
 import { NewsContext } from '../context/NewsContext';
 
 const NewsCard = ({img,url,desc,title})=>{
+    
     const {setAuth, setIsLoginAuth, add, remove, user, setUserData, userNews} = useContext(NewsContext); 
     const [like,setLike] = useState(false);
 
