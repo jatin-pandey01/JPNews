@@ -8,7 +8,7 @@ import Loader from '../components/Loader';
 import { useRouter } from 'next/navigation';
 import StoreCard from '../components/StoreCard';
 
-const page = () => {
+const Page = () => {
     const {loader,userNews} = useContext(NewsContext);
     const router = useRouter();
     useEffect(()=>{
@@ -42,4 +42,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
