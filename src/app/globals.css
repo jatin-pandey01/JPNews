@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.background{
+  background: rgb(33,31,67);
+  background: linear-gradient(180deg, rgba(33,31,67,1) 5%, rgba(120,149,186,1) 74%);
+  font-family: 'Poppins', sans-serif;
+}
+
+.spinner {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  padding: 1.1px;
+  background: conic-gradient(#0000 10%,#ffffff) content-box;
+  -webkit-mask: repeating-conic-gradient(#0000 0deg,#000 1deg 20deg,#0000 21deg 36deg),
+       radial-gradient(farthest-side,#0000 calc(100% - 9px),#000 calc(100% - 9px));
+  -webkit-mask-composite: destination-in;
+  mask-composite: intersect;
+  animation: spinner-d55elj 1s infinite steps(10);
+}
+
+@keyframes spinner-d55elj {
+  to {
+     transform: rotate(1turn);
+  }
+}
+
+.news-container{
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 1em;
+}
+
+@media screen and (max-width: 768px) {
+  .news-container{
+      grid-template-columns: repeat(1,1fr);
+  }
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.blue-glassmorphism {
+  background: rgb(39, 51, 89, 0.4);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
