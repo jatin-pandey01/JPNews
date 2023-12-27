@@ -7,15 +7,15 @@ import { db } from '../firebase/firebase';
 import { NewsContext } from '../context/NewsContext';
 
 const NewsCard = ({img,url,desc,title})=>{
-    
+
     const {setAuth, setIsLoginAuth, add, remove, user, setUserData, userNews} = useContext(NewsContext); 
     const [like,setLike] = useState(false);
 
     useEffect(()=>{
         if(userNews){
-            console.log(userNews);
+            // console.log(userNews);
             for(let i of userNews){
-                console.log(i);
+                // console.log(i);
                 if(i.title == title ){
                     console.log("True");
                     setLike(true);
@@ -72,7 +72,7 @@ const NewsCard = ({img,url,desc,title})=>{
 
     return(
         <div className='bg-gray-200 text-black my-5 rounded-t-xl rounded-b-xl pb-2 relative'>
-            <img src={img && img || paper} className='w-full rounded-t-xl h-52' alt='Article' loading='lazy' />
+            <img src={img && img || paper} className='w-full rounded-t-xl h-64' alt='Article' loading='lazy' />
             <div className='relative'>
                 <p className='text-xl font-bold px-3 mt-3'> {title} </p>
                 <p className='text-lg text-opacity-5 px-3'> { desc && desc.split(" ").slice(0,20).join(" ")+ '. . .  .'} </p>

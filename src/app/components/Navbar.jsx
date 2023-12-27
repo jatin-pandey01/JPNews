@@ -3,10 +3,11 @@ import Login from './Login';
 import Register from './Register';
 import { FaStore } from "react-icons/fa";
 import { NewsContext } from '../context/NewsContext';
-import { useRouter } from 'next/navigation';
+// import { useRouter } from 'next/navigation';
+import Router from 'next/router';
 
 const Navbar = ({}) => {
-    const Router = useRouter();
+    // const Router = useRouter();
     const { auth , setAuth ,
             user , userData ,
             isLoginAuth , setIsLoginAuth ,logout } = useContext(NewsContext);

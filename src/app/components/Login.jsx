@@ -36,9 +36,11 @@ const Login = ()=>{
                     <input type={`${isEyeOpen ? 'text' :'password'}`} name='password' value={formData.password} placeholder='Password' className='outline-none text-black px-3 rounded-lg py-2 pr-8' required onChange={changeHandler}/>
                     <p className='absolute cursor-pointer text-xl text-black bottom-7 right-7' onClick={()=>setIsEyeOpen(!isEyeOpen)} >{isEyeOpen ?<IoEyeSharp/> : <IoEyeOff/> }</p>
                 </form>
-                <button className='bg-blue-500 w-fit rounded-lg px-3 py-1 my-2'  onClick={loginUser}> Login </button>
-                <p > ----OR---- </p>
-                <button className='bg-blue-500 w-fit rounded-lg px-3 py-1 mt-2' onClick={()=> setIsLoginAuth(false) } > Register </button>
+                <div className="flex justify-around items-center flex-wrap w-full">
+                <button className='bg-blue-500 w-fit rounded-lg px-3 py-1 mt-2 hover:bg-blue-800' onClick={()=> setIsLoginAuth(false) } > Register </button>
+                <button className='bg-blue-500 w-fit rounded-lg px-3 py-1 mt-2 hover:bg-blue-800'  onClick={loginUser}> Login </button>
+                {/* <p > ----OR---- </p> */}
+                </div>
             </div>
         </div>
     )

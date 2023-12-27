@@ -5,12 +5,13 @@ import NewsCard from '../components/NewsCard';
 import { NewsContext } from '../context/NewsContext';
 import Navbar from '../components/Navbar';
 import Loader from '../components/Loader';
-import { useRouter } from 'next/navigation';
+// import { useRouter } from 'next/navigation';
+import Router from 'next/router';
 import StoreCard from '../components/StoreCard';
 
 const page = () => {
     const {loader,userNews} = useContext(NewsContext);
-    const Router = useRouter();
+    // const Router = useRouter();
     useEffect(()=>{
         onAuthStateChanged(async(user)=>{
             if(!user){
