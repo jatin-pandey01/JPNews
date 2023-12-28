@@ -23,7 +23,7 @@ const Dashboard = () => {
                 loading ? <Loader/> : <div className='news-container'>
                     {
                         data && data.map((d,index)=>{   
-                            return <NewsCard key={index} title={d.title} url={d.url} img={d.urlToImage} 
+                            return <NewsCard key={index} title={d.title} url={d.url} img={d.image} 
                                         desc={d.content || d.description} />
                         })
                     }
