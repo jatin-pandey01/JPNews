@@ -16,33 +16,33 @@ export default function RootLayout({ children }) {
       <head>
         <link rel='shortcut icon' href='./favicon.ico' type='image/x-icon'/>
       </head>
-      <body className={inter.className}>
-        <NewsContextProvider>
-          {children}
-          <Toaster position='top-center' 
-            gutter={8} 
-            toastOptions={
-              {
-                duration:800,
-                style:
-                {
-                  background: '#fff',
-                  color: '#363636',
-                }, 
-                success:
+      <NewsContextProvider>
+        <body className={inter.className}>
+            {children}
+            <Toaster position='top-center' 
+              gutter={8} 
+              toastOptions={
                 {
                   duration:800,
-                  theme: 
+                  style:
                   {
-                    primary: 'green',
-                    secondary: 'white',
-                  },
-                } 
+                    background: '#fff',
+                    color: '#363636',
+                  }, 
+                  success:
+                  {
+                    duration:800,
+                    theme: 
+                    {
+                      primary: 'green',
+                      secondary: 'white',
+                    },
+                  } 
+                }
               }
-            }
-          />
-        </NewsContextProvider>
-      </body>
+            />
+        </body>
+      </NewsContextProvider>
     </html>
   )
 }
