@@ -27,10 +27,10 @@ function NewsContextProvider(props){
             res = await res.json();
             console.log(res);
             if(res.errors){
-                alert(res.errors[0]);
+                return alert(res.errors[0]);
             }
             setLoading(false);
-            setData(data.articles);
+            setData(res.articles);
         } 
         catch (error) {
             // alert('Sorry!!, please try again.');

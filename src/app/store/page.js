@@ -26,13 +26,16 @@ const Page = () => {
                 {
                     loader ? <Loader/> : <div>
                         {
-                            userNews.length > 0 ? <div className='news-container'>
-                            {
-                                userNews.map((d,index)=>{
-                                    return <StoreCard key={index} title={d.title} url={d.link} img={d.img} 
-                                                desc={d.desc} />
-                                })
-                            }
+                            userNews.length > 0 ? <div className='flex flex-col'>
+                                <p className='text-center text-3xl text-white mt-10'>Favourite Articles</p>
+                                <div className='news-container'>
+                                {
+                                    userNews.map((d,index)=>{
+                                        return <StoreCard key={index} title={d.title} url={d.link} img={d.img} 
+                                                    desc={d.desc} />
+                                    })
+                                }
+                                </div>
                             </div> : <div className='text-white flex justify-center items-center'> <p className='absolute top-1/2 bottom-1/2 text-2xl font-bold'>Sorry!!!! No Articles</p> </div>
                             
                         }
