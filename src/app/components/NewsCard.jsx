@@ -37,15 +37,13 @@ const NewsCard = ({img,url,desc,title})=>{
                         link:url,
                     })
                 });
-                const docSnap = await getDoc(docRef);
-                setUserData(docSnap.data());
+                // const docSnap = await getDoc(docRef);
+                // setUserData(docSnap.data());
                 add({img:img,
                     title:title,
                     desc:desc,
                     link:url,});
                 toast.success("Liked successfully");
-
-                
             }
             else{
                 const docRef = doc(db, "jatin", user.uid);
@@ -57,10 +55,11 @@ const NewsCard = ({img,url,desc,title})=>{
                         link:url,
                     })
                 });
-                const docSnap = await getDoc(docRef);
-                setUserData(docSnap.data());
+                // const docSnap = await getDoc(docRef);
+                // setUserData(docSnap.data());
                 remove(title);
                 toast.error("Like Removed successful");
+                
             }
         }
         else{

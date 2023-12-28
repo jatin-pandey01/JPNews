@@ -3,17 +3,17 @@ import Login from './Login';
 import Register from './Register';
 import { FaStore } from "react-icons/fa";
 import { NewsContext } from '../context/NewsContext';
-// import { useRouter } from 'next/navigation';
-import Router from 'next/router';
+import { useRouter } from 'next/navigation';
+// import Router from 'next/router';
 
 const Navbar = ({}) => {
-    // const Router = useRouter();
+    const Router = useRouter();
     const { auth , setAuth ,
             user , userData ,
             isLoginAuth , setIsLoginAuth ,logout } = useContext(NewsContext);
     
   return (
-    <div className=' w-full bg-blue-400 py-3'>
+    <div className=' w-full text-white bg-blue-400 py-3'>
         {
             !user ? (
                 <div className='flex justify-around items-center'>

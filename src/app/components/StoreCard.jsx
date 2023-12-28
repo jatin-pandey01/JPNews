@@ -19,11 +19,11 @@ const StoreCard = ({img,url,desc,title}) => {
                     link:url,
                 })
             });
-        const docSnap = await getDoc(docRef);
-        setUserData(docSnap.data());
+        // const docSnap = await getDoc(docRef);
+        // setUserData(docSnap.data());
         remove(title);
         toast.error("Like Removed successful");
-        // window.location.reload();
+        window.location.reload();
     }
     
 

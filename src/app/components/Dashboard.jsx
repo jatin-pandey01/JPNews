@@ -22,9 +22,9 @@ const Dashboard = () => {
             {
                 loading ? <Loader/> : <div className='news-container'>
                     {
-                        data.map((d,index)=>{
-                            return <NewsCard key={index} title={d.title} url={d.url} img={d.urlToImage} 
-                                        desc={d.description || d.content} />
+                        data && data.map((d,index)=>{   
+                            return <NewsCard key={index} title={d.title} url={d.url} img={d.image} 
+                                        desc={d.content || d.description} />
                         })
                     }
                 </div>

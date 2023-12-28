@@ -23,13 +23,17 @@ function NewsContextProvider(props){
         try {
             setData([]);
             setLoading(true);
-            const res = await axios.get(`https://newsapi.org/v2/top-headlines?country=in&category=${active}&apiKey=e1b060327fa8467997a5dbc212e9112f`);
-            // console.log(res.data.articles);
+            let res = await fetch(`https://gnews.io/api/v4/top-headlines?country=in&lang=en&category=${active}&apikey=16eb65b8cab37c72f67c88447b3b380b`);
+            res = await res.json();
+            console.log(res);
+            if(res.errors){
+                alert(res.errors[0]);
+            }
             setLoading(false);
-            setData(res.data.articles);
+            setData(data.articles);
         } 
         catch (error) {
-            alert('Sorry!!, please try again.');
+            // alert('Sorry!!, please try again.');
             console.log(error);
         }
     }  
@@ -53,7 +57,9 @@ function NewsContextProvider(props){
     }
 
     const remove = (d)=>{
+        setLoading(true);
         const dn = userNews.filter((news) => news.title !== d);
+        setLoading(false);
         return setUserNews(dn);
     }
     
